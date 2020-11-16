@@ -8,20 +8,8 @@
   with_items:
     - 7BF576066ADA65728FC7E70A8C47BE8E75BCA694
 
-- name: add additional repos
-  apt_repository:
-    repo: 'deb http://ppa.launchpad.net/certbot/certbot/ubuntu {{ ansible_distribution_release }} main'
-    validate_certs: true
-    update_cache: true
-    state: present
-
-- name: apt dist-upgrade
+- name: install python3-certbot-nginx packages
   apt:
-    upgrade: dist
-    autoremove: true
-
-- name: install python-certbot-nginx packages
-  apt:
-    name: python-certbot-nginx
+    name: python3-certbot-nginx
     autoremove: true
     state: latest

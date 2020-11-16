@@ -14,14 +14,14 @@ install_pip () {
 }
 
 prepare_ubuntu() {
-        $SUDO apt update -y
-        $SUDO apt dist-upgrade -y
-        $SUDO apt install software-properties-common curl git mc vim facter python python-apt aptitude -y
+#        $SUDO apt update -y
+#        $SUDO apt dist-upgrade -y
+        $SUDO apt install software-properties-common curl facter python-is-python3 ansible python3-pip  -y
         [ $(uname -m) == "aarch64" ] && $SUDO apt install gcc python-dev libffi-dev libssl-dev make -y
 
-        PYTHON_BIN=/usr/bin/python
-        install_pip
-        $SUDO pip install python-apt -U
+#        PYTHON_BIN=/usr/bin/python
+#        install_pip
+#        $SUDO pip install python-apt -U
 
         set +x
         echo
